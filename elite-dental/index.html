@@ -266,6 +266,110 @@
             text-decoration: underline;
         }
 
+        /* Facebook Ad Mockups */
+        .copy-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .fb-ad-mockup {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #E5E5E5;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .fb-ad-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            gap: 10px;
+        }
+
+        .fb-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0170B9, #00a0dc);
+        }
+
+        .fb-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fb-page {
+            font-weight: 600;
+            font-size: 14px;
+            color: #050505;
+        }
+
+        .fb-sponsored {
+            font-size: 12px;
+            color: #65676B;
+        }
+
+        .fb-ad-text {
+            padding: 0 16px 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            color: #050505;
+        }
+
+        .fb-ad-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            background: #f0f0f0;
+        }
+
+        .fb-ad-footer {
+            padding: 12px 16px;
+            background: #f0f2f5;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .fb-headline {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            color: #050505;
+            margin-bottom: 4px;
+        }
+
+        .fb-headline code, .fb-ad-text code {
+            background: #fff3cd;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-family: inherit;
+            color: #856404;
+        }
+
+        .fb-description {
+            font-size: 13px;
+            color: #65676B;
+        }
+
+        .fb-ad-cta {
+            margin: 12px 16px 16px;
+            padding: 10px 20px;
+            background: #0170B9;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .copy-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.75rem;
@@ -394,6 +498,79 @@
                     <h4 class="ad-title">Office Lobby</h4>
                     <p class="ad-desc">In-office setting, professional environment</p>
                 </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">Ad Copy Options</h3>
+        <p style="color: #666; margin-bottom: 30px;">Facebook ad copy with <code style="background: #e8f4fc; padding: 2px 6px; border-radius: 3px; color: #0170B9;">{city}</code> placeholder for San Antonio, New Braunfels, or Pleasanton.</p>
+
+        <div class="copy-options">
+            <div class="fb-ad-mockup">
+                <div class="fb-ad-header">
+                    <div class="fb-avatar"></div>
+                    <div class="fb-meta">
+                        <span class="fb-page">Elite Dental & Implant Center</span>
+                        <span class="fb-sponsored">Sponsored</span>
+                    </div>
+                </div>
+                <div class="fb-ad-text">Finally, a dentist that doesn't break the bank. Get a complete cleaning, exam, and x-rays for just $99 — plus FREE teeth whitening for life when you become a patient. Dr. Mohan & Dr. Veena are welcoming new patients now.</div>
+                <img src="elite-ad-v1.png" class="fb-ad-image" alt="Ad preview">
+                <div class="fb-ad-footer">
+                    <span class="fb-headline">{city}: $99 Dental Visit + Free Whitening for Life</span>
+                    <span class="fb-description">Elite Dental & Implant Center • Book Online Today</span>
+                </div>
+                <div class="fb-ad-cta">Book Now</div>
+            </div>
+
+            <div class="fb-ad-mockup">
+                <div class="fb-ad-header">
+                    <div class="fb-avatar"></div>
+                    <div class="fb-meta">
+                        <span class="fb-page">Elite Dental & Implant Center</span>
+                        <span class="fb-sponsored">Sponsored</span>
+                    </div>
+                </div>
+                <div class="fb-ad-text">$99 gets you a full cleaning, exam, and x-rays. But here's the real deal: FREE whitening for life. No gimmicks. Just great dentistry from Dr. Mohan & Dr. Veena.</div>
+                <img src="elite-superhero-v1.png" class="fb-ad-image" alt="Ad preview">
+                <div class="fb-ad-footer">
+                    <span class="fb-headline">{city} Families Trust Elite Dental</span>
+                    <span class="fb-description">New Patient Special • Limited Availability</span>
+                </div>
+                <div class="fb-ad-cta">Learn More</div>
+            </div>
+
+            <div class="fb-ad-mockup">
+                <div class="fb-ad-header">
+                    <div class="fb-avatar"></div>
+                    <div class="fb-meta">
+                        <span class="fb-page">Elite Dental & Implant Center</span>
+                        <span class="fb-sponsored">Sponsored</span>
+                    </div>
+                </div>
+                <div class="fb-ad-text">New patient special: Complete cleaning, exam & x-rays for $99. Plus — free teeth whitening for life. Yes, really. Book your spot at Elite Dental today.</div>
+                <img src="elite-ad-v2.png" class="fb-ad-image" alt="Ad preview">
+                <div class="fb-ad-footer">
+                    <span class="fb-headline">$99 Dental Visit in {city}</span>
+                    <span class="fb-description">Dr. Mohan & Dr. Veena • Now Accepting Patients</span>
+                </div>
+                <div class="fb-ad-cta">Book Now</div>
+            </div>
+
+            <div class="fb-ad-mockup">
+                <div class="fb-ad-header">
+                    <div class="fb-avatar"></div>
+                    <div class="fb-meta">
+                        <span class="fb-page">Elite Dental & Implant Center</span>
+                        <span class="fb-sponsored">Sponsored</span>
+                    </div>
+                </div>
+                <div class="fb-ad-text">$99 new patient special: cleaning, exam & x-rays. And we'll throw in FREE whitening for life. No catch. Just great care from a team that actually listens.</div>
+                <img src="elite-superhero-veena.png" class="fb-ad-image" alt="Ad preview">
+                <div class="fb-ad-footer">
+                    <span class="fb-headline">Looking for a Dentist in {city}?</span>
+                    <span class="fb-description">Elite Dental • New Patients Welcome</span>
+                </div>
+                <div class="fb-ad-cta">Learn More</div>
             </div>
         </div>
     </div>
