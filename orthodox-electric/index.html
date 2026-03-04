@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthodox Electric — Campaign Launch Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 60px 24px 48px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.85;
+            margin-bottom: 4px;
+        }
+
+        .hero .date {
+            font-size: 14px;
+            opacity: 0.6;
+            margin-top: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px auto;
+            max-width: 800px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 24px;
+        }
+
+        .section .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        .section p, .section li {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+        }
+
+        /* Campaign structure visual */
+        .structure {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .structure-campaign {
+            background: #1a1a2e;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .structure-campaign .budget {
+            font-weight: 400;
+            font-size: 13px;
+            opacity: 0.7;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .structure-arrow {
+            text-align: center;
+            color: #999;
+            font-size: 20px;
+        }
+
+        .ad-groups-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .ag-card {
+            background: #f0f4ff;
+            border: 1px solid #d0dcf0;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .ag-card .ag-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+
+        .ag-card .ag-keywords {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .ag-card .ag-ads {
+            font-size: 11px;
+            color: #0f3460;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 16px 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-box .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f3460;
+        }
+
+        .stat-box .stat-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Landing pages */
+        .lp-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lp-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lp-list li:last-child {
+            border-bottom: none;
+        }
+
+        .lp-city {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .lp-url {
+            font-size: 13px;
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        .lp-url:hover {
+            text-decoration: underline;
+        }
+
+        /* Ad preview */
+        .ad-preview {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+            border-left: 3px solid #0f3460;
+        }
+
+        .ad-preview .ad-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .ad-preview .ad-headline {
+            font-size: 18px;
+            color: #1a0dab;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .ad-preview .ad-url {
+            font-size: 13px;
+            color: #006621;
+            margin-bottom: 6px;
+        }
+
+        .ad-preview .ad-desc {
+            font-size: 14px;
+            color: #545454;
+        }
+
+        /* Negative keywords */
+        .neg-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .neg-cat {
+            background: #fff5f5;
+            border: 1px solid #ffe0e0;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .neg-cat .neg-cat-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: #c0392b;
+            margin-bottom: 4px;
+        }
+
+        .neg-cat .neg-cat-count {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Tracking section */
+        .tracking-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .tracking-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px;
+            background: #f0faf0;
+            border-radius: 8px;
+            border: 1px solid #d0e8d0;
+        }
+
+        .tracking-item .tracking-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .tracking-item .tracking-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a1a2e;
+        }
+
+        .tracking-item .tracking-desc {
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Settings table */
+        .settings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .settings-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .settings-table td:first-child {
+            font-weight: 600;
+            color: #555;
+            width: 40%;
+        }
+
+        /* Next steps */
+        .next-steps {
+            list-style: none;
+            padding: 0;
+            counter-reset: step;
+        }
+
+        .next-steps li {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: flex-start;
+        }
+
+        .next-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .next-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            background: #0f3460;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content .step-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a1a2e;
+        }
+
+        .step-content .step-desc {
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 24px; }
+            .ad-groups-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .neg-categories { grid-template-columns: 1fr; }
+            .section { padding: 24px 20px; margin: 16px 12px; }
+            .lp-list li { flex-direction: column; align-items: flex-start; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-badge">Campaign Launch Report</div>
+        <h1>Orthodox Electric</h1>
+        <p>Electrician Leads — Google Search Campaign</p>
+        <div class="date">March 4, 2026</div>
+    </div>
+
+    <!-- Campaign Overview -->
+    <div class="section">
+        <h2><span class="icon">&#9889;</span> Campaign Overview</h2>
+        <p class="subtitle">What we built and how it's structured</p>
+
+        <p>We built a new Google Ads Search campaign targeting electrician-related searches across your core service area. The campaign uses a single shared budget with 6 ad groups — one for each target city plus a generic "near me" group.</p>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Ad Groups</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">43</div>
+                <div class="stat-label">Keywords</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">69</div>
+                <div class="stat-label">Negatives</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Ads</div>
+            </div>
+        </div>
+
+        <div class="structure">
+            <div class="structure-campaign">
+                Electrician Leads | Search
+                <span class="budget">$50/day &bull; $1,500/month</span>
+            </div>
+            <div class="structure-arrow">&#8595;</div>
+            <div class="ad-groups-grid">
+                <div class="ag-card">
+                    <div class="ag-name">Bryan / CS</div>
+                    <div class="ag-keywords">11 keywords</div>
+                    <div class="ag-ads">2 ads (A/B test)</div>
+                </div>
+                <div class="ag-card">
+                    <div class="ag-name">Anderson</div>
+                    <div class="ag-keywords">5 keywords</div>
+                    <div class="ag-ads">1 ad</div>
+                </div>
+                <div class="ag-card">
+                    <div class="ag-name">Navasota</div>
+                    <div class="ag-keywords">6 keywords</div>
+                    <div class="ag-ads">1 ad</div>
+                </div>
+                <div class="ag-card">
+                    <div class="ag-name">Brenham</div>
+                    <div class="ag-keywords">7 keywords</div>
+                    <div class="ag-ads">1 ad</div>
+                </div>
+                <div class="ag-card">
+                    <div class="ag-name">Magnolia</div>
+                    <div class="ag-keywords">7 keywords</div>
+                    <div class="ag-ads">1 ad</div>
+                </div>
+                <div class="ag-card">
+                    <div class="ag-name">General</div>
+                    <div class="ag-keywords">7 keywords</div>
+                    <div class="ag-ads">1 ad</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 14px; color: #666; margin-top: 12px;">Google's algorithm automatically allocates budget across ad groups based on search demand — higher-volume cities like Bryan/CS will naturally receive more budget, while smaller markets like Anderson get proportional spend.</p>
+    </div>
+
+    <!-- Landing Pages -->
+    <div class="section">
+        <h2><span class="icon">&#128196;</span> Dedicated Landing Pages</h2>
+        <p class="subtitle">Each city has its own PPC landing page with localized content</p>
+
+        <p>We created city-specific landing pages separate from your main website. Each page is tailored with local content, your services, reviews, and a clear call to action. These pages are built to convert — no distracting navigation menus, just the info a potential customer needs.</p>
+
+        <ul class="lp-list">
+            <li>
+                <span class="lp-city">Bryan / College Station</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/bryan-cs" target="_blank">orthodoxelectric.com/lp/electrician/bryan-cs</a>
+            </li>
+            <li>
+                <span class="lp-city">Anderson</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/anderson" target="_blank">orthodoxelectric.com/lp/electrician/anderson</a>
+            </li>
+            <li>
+                <span class="lp-city">Navasota</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/navasota" target="_blank">orthodoxelectric.com/lp/electrician/navasota</a>
+            </li>
+            <li>
+                <span class="lp-city">Brenham</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/brenham" target="_blank">orthodoxelectric.com/lp/electrician/brenham</a>
+            </li>
+            <li>
+                <span class="lp-city">Magnolia</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/magnolia" target="_blank">orthodoxelectric.com/lp/electrician/magnolia</a>
+            </li>
+            <li>
+                <span class="lp-city">East Texas (Generic)</span>
+                <a class="lp-url" href="https://orthodoxelectric.com/lp/electrician/east-texas" target="_blank">orthodoxelectric.com/lp/electrician/east-texas</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Ad Preview -->
+    <div class="section">
+        <h2><span class="icon">&#128270;</span> Sample Ad Preview</h2>
+        <p class="subtitle">What your ads look like in Google Search results</p>
+
+        <p>Google's Responsive Search Ads mix and match your headlines and descriptions to find the best-performing combinations. Here's an example of how they might appear:</p>
+
+        <div class="ad-preview">
+            <div class="ad-label">Google Search Ad</div>
+            <div class="ad-headline">Electrician in Bryan, TX — Licensed Master Electrician</div>
+            <div class="ad-url">orthodoxelectric.com/lp/electrician/bryan-cs</div>
+            <div class="ad-desc">Licensed Master Electrician serving Bryan & College Station. Get a free estimate! Panel upgrades, EV chargers, generators & more. 25+ years experience.</div>
+        </div>
+
+        <div class="ad-preview">
+            <div class="ad-label">Challenger Ad (Bryan/CS A/B Test)</div>
+            <div class="ad-headline">Bryan TX Electrician — 76 Five-Star Reviews</div>
+            <div class="ad-url">orthodoxelectric.com/lp/electrician/bryan-cs</div>
+            <div class="ad-desc">76+ five-star reviews. Owner on every job. Bryan & College Station's trusted electrician. Fast response, upfront pricing, no surprise bills.</div>
+        </div>
+
+        <p style="font-size: 14px; color: #666; margin-top: 16px;">We're running an A/B test on the Bryan/CS ad group — the highest volume market. The "Control" ad uses a traditional trust-focused approach, while the "Challenger" leans into social proof and urgency. After enough data, we'll roll the winner out to all cities.</p>
+    </div>
+
+    <!-- Location Targeting -->
+    <div class="section">
+        <h2><span class="icon">&#128205;</span> Location & Targeting</h2>
+        <p class="subtitle">Who sees your ads and when</p>
+
+        <table class="settings-table">
+            <tr>
+                <td>Coverage Area</td>
+                <td>40-mile radius from Navasota — covers Bryan/CS, Anderson, Brenham, Magnolia, and surrounding areas</td>
+            </tr>
+            <tr>
+                <td>Targeting Mode</td>
+                <td><strong>Presence Only</strong> — ads only show to people physically in the area, not people researching it from elsewhere</td>
+            </tr>
+            <tr>
+                <td>Network</td>
+                <td>Google Search only — no display ads, no search partner sites</td>
+            </tr>
+            <tr>
+                <td>Schedule</td>
+                <td>24/7 — budget controls daily spend, we'll optimize hours after collecting data</td>
+            </tr>
+            <tr>
+                <td>Budget</td>
+                <td>$50/day ($1,500/month) — shared across all ad groups</td>
+            </tr>
+            <tr>
+                <td>Bidding</td>
+                <td>Manual CPC at $8.00 — switching to automated bidding after conversion tracking matures</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Budget Protection -->
+    <div class="section">
+        <h2><span class="icon">&#128737;</span> Budget Protection</h2>
+        <p class="subtitle">69 negative keywords keeping your budget focused on real customers</p>
+
+        <p>We analyzed 12 months of your account's search term data to identify wasteful clicks. We added 69 negative keywords across these categories to prevent your ads from showing on irrelevant searches:</p>
+
+        <div class="neg-categories">
+            <div class="neg-cat">
+                <div class="neg-cat-name">Wrong Locations</div>
+                <div class="neg-cat-count">22 terms blocked (Houston, Dallas, Austin, etc.)</div>
+            </div>
+            <div class="neg-cat">
+                <div class="neg-cat-name">Competitors</div>
+                <div class="neg-cat-count">5 terms blocked (franchise chains)</div>
+            </div>
+            <div class="neg-cat">
+                <div class="neg-cat-name">Job Seekers</div>
+                <div class="neg-cat-count">10 terms blocked (jobs, salary, hiring, etc.)</div>
+            </div>
+            <div class="neg-cat">
+                <div class="neg-cat-name">DIY / How-To</div>
+                <div class="neg-cat-count">12 terms blocked (tutorials, YouTube, Reddit, etc.)</div>
+            </div>
+            <div class="neg-cat">
+                <div class="neg-cat-name">Wrong Services</div>
+                <div class="neg-cat-count">12 terms blocked (electric company, HVAC, etc.)</div>
+            </div>
+            <div class="neg-cat">
+                <div class="neg-cat-name">Generator Terms</div>
+                <div class="neg-cat-count">4 terms blocked (handled by separate campaign)</div>
+            </div>
+        </div>
+
+        <p style="font-size: 14px; color: #666; margin-top: 8px;">We review search terms regularly and add new negatives as needed. This is an ongoing process — the list grows over time as we see what people are actually searching.</p>
+    </div>
+
+    <!-- Conversion Tracking -->
+    <div class="section">
+        <h2><span class="icon">&#128200;</span> Conversion Tracking</h2>
+        <p class="subtitle">How we measure results</p>
+
+        <p>We installed tracking so every lead that comes through this campaign is measured and attributed correctly. This data tells us exactly which keywords, ads, and cities are driving calls and form fills.</p>
+
+        <div class="tracking-items">
+            <div class="tracking-item">
+                <div class="tracking-icon">&#128222;</div>
+                <div>
+                    <div class="tracking-name">Call Tracking</div>
+                    <div class="tracking-desc">Dynamic number swap on your website tracks which calls come from Google Ads. Each call is logged with the keyword and ad that triggered it.</div>
+                </div>
+            </div>
+            <div class="tracking-item">
+                <div class="tracking-icon">&#128221;</div>
+                <div>
+                    <div class="tracking-name">Form Submit Tracking</div>
+                    <div class="tracking-desc">When a visitor submits a contact form on your site, the conversion is tracked back to the specific ad click that brought them in.</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 14px; color: #666; margin-top: 8px;">Conversion data typically takes 24–48 hours to appear in reports. Once we have enough conversion data (usually 2–4 weeks), we can switch to automated bidding that optimizes for leads rather than clicks.</p>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="section">
+        <h2><span class="icon">&#127919;</span> What's Next</h2>
+        <p class="subtitle">Our optimization roadmap for the coming weeks</p>
+
+        <ul class="next-steps">
+            <li>
+                <div class="step-content">
+                    <div class="step-title">Week 1–2: Data Collection</div>
+                    <div class="step-desc">The campaign is live and collecting impressions, clicks, and search term data. We're watching for any search terms that need to be added as negatives.</div>
+                </div>
+            </li>
+            <li>
+                <div class="step-content">
+                    <div class="step-title">Week 2–3: Search Term Review</div>
+                    <div class="step-desc">We'll pull the search terms report and add any new negatives. This is where we fine-tune what triggers your ads.</div>
+                </div>
+            </li>
+            <li>
+                <div class="step-content">
+                    <div class="step-title">Week 3–4: A/B Test Check-In</div>
+                    <div class="step-desc">Check if the Bryan/CS A/B test has enough data to declare a winner. If so, we roll the winning ad style to all cities.</div>
+                </div>
+            </li>
+            <li>
+                <div class="step-content">
+                    <div class="step-title">Month 2+: Bid Optimization</div>
+                    <div class="step-desc">Once we have 15+ conversions, we can switch from manual CPC to automated bidding (Maximize Conversions) which uses Google's AI to get more leads at a lower cost.</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Prepared by <a href="https://primedentalleads.com" target="_blank">Prime Local Marketing</a></p>
+        <p style="margin-top: 8px;">Questions? Just reply to the email this came with or give us a call.</p>
+    </div>
+
+</body>
+</html>
